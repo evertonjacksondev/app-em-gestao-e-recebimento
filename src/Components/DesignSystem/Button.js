@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "material-icons/iconfont/material-icons.css";
 
 const Button = (props) => {
-  const { name = "Salvar", background = "#587FA6", icon = "close" } = props;
+  const { name = "Salvar", background = "#587FA6", icon = "close", ...others } = props;
   const Button = styled.button`
     background: ${background};
     color: white;
@@ -27,7 +27,7 @@ const Button = (props) => {
   `;
 
   return (
-    <Button>
+    <Button {...others}>
       <i class="material-icons">{icon}</i>
       <Paragraph>{name}</Paragraph>
     </Button>
