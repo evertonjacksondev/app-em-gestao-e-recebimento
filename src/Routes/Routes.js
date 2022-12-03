@@ -1,6 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
+import Button from "../Components/DesignSystem/Button";
 import TextField from "../Components/DesignSystem/TextField";
 import Home from "../Pages/Home/Home";
 import PackingDetails from "../Pages/Packings/PackingDetails";
@@ -12,7 +13,7 @@ const AppRoute = () => {
   return (
     <Fragment>
       <Routes>
-        <Route path="/teste" element={<TextField />} />
+        <Route path="/teste" element={<><TextField /><Button></Button></>} />
         <Route path="/home" element={<Home />} />
         <Route path="/encomenda" element={<PackingPage />} />
         <Route path="/encomenda/:id" element={<PackingDetails />} />

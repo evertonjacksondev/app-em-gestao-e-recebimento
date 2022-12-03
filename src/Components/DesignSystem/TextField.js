@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "material-icons/iconfont/material-icons.css";
 
 const TextField = (props) => {
-  const { name = "Salvar", background = "#F2D199", type = "text" } = props;
+  const { required = true,name = "Salvar", background = "#F2D199", type = "text" } = props;
 
   const Label = styled.label`
     font-size: 12px;
@@ -13,18 +13,17 @@ const TextField = (props) => {
 
   const TextField = styled.input`
     background: ${background};
-    color: black;
-    border: 2px solid #606060;
+    border: 1px solid #606060;
     border-radius: 7px;
     width: 200px;
     height: 30px;
     font-size: 14px;
-    font-family: "Lato", sans-serif;
+    box-shadow: 0 0 2px #808080;
   `;
 
   return (
     <Fragment>
-      <Label for="input">{name}</Label>
+      <Label for="input">{required ?name + ' *': name }</Label>
       <TextField type={type}id="input"></TextField>
     </Fragment>
   );

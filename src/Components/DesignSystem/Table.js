@@ -1,9 +1,8 @@
 import React from 'react'
 
-const Table = () => {
-  return (
-    <div>Table</div>
-  )
+const Table = props => {
+  const { data } = props
+  return <div>Table</div>
 }
 
 export default Table

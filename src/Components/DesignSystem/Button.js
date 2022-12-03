@@ -9,10 +9,10 @@ const Button = (props) => {
     color: white;
     border: 1px solid #587FA6;
     border-radius: 7px;
-    padding: 20px;
     width: 150px;
-    height: 20px;
-    font-size: 18px;
+    margin:5px;
+    height: 35px;
+    font-size: 16px;
     font-family: "Lato", sans-serif;
     display: flex;
     align-items: center;
