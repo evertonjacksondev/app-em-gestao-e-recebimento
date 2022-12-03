@@ -13,7 +13,6 @@ const Button = (props) => {
     margin:5px;
     height: 35px;
     font-size: 16px;
-    font-family: "Lato", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;

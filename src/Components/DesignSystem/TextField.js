@@ -17,7 +17,7 @@ const TextField = (props) => {
     border-radius: 7px;
     width: 200px;
     height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 0 0 2px #808080;
   `;
 
