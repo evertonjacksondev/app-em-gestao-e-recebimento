@@ -12,15 +12,23 @@ const TextField = props => {
   `
 
   const TextField = styled.input`
-    border-radius: 7px;
+    border-radius: 6px;
     width: 200px;
     height: 30px;
     border: 1px solid black;
     font-size: 12px;
     :hover {
+      border: 1px solid #587fa6;
+    }
+    :focus {
+      outline:none;
+      border: 1px solid #587fa6;
       box-shadow: 10px 5px 5px #ABA6A2;
     }
   `
+
+
+
 
   return (
     <Fragment>
