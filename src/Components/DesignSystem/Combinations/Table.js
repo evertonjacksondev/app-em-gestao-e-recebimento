@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
 
-const Table = ({ id, columns, data }) => {
+export const Table = ({ id, columns, data }) => {
   const Table = styled.table`
     border: 1px solid black;
     width: 100%;

@@ -1,62 +1,15 @@
-import React, { useState } from 'react'
-import TextField from '../../Components/DesignSystem/TextField'
+import { Fragment, React } from 'react'
+import ButtonDefault from '../../Components/DesignSystem/Combinations/ButtonDefault'
+import Table from '../../Components/DesignSystem/Combinations/Table'
 
-const PackingsPage = () => {
-  const [data, setData] = useState({})
-
-  const handleChange = e => {
-    e.preventDefault()
-    const { name, value } = e.target
-    setData(current => {
-      return {
-        ...current,
-        [name]: value
-      }
-    })
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-  }
+const PackingPage = () => {
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        key='name'
-        name='name'
-        label='Nome'
-        value={data.name}
-        onChange={handleChange}
-      />
-      <TextField
-        key='torre'
-        name='torre'
-        label='Torre'
-        value={data.torre}
-        onChange={handleChange}
-      />
-      <TextField
-        key='number'
-        name='number'
-        label='Número'
-        value={data.number}
-        onChange={handleChange}
-      />
-      <TextField
-        key='type'
-        name='type'
-        label='Tipo'
-        value={data.type}
-        onChange={handleChange}
-      />
-      <TextField
-        key='createdBy'
-        name='createdBy'
-        label='Cadastrado Por:'
-        value={data.createdBy}
-        onChange={handleChange}
-      />
-    </form>
+    <Fragment>
+      <ButtonDefault name={'Nova Encomenda'} icon={'add'} />
+
+      <Table />
+    </Fragment>
   )
 }
 
-export default PackingsPage
+export default PackingPage

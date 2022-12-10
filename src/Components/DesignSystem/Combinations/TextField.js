@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import 'material-icons/iconfont/material-icons.css'
-import { Label } from './Label'
-import { Input } from './Input'
+import { Label } from '../Elements/Label'
+import { Input } from '../Elements/Input'
+import { SectionInput } from '../Elements/Section'
 
 const TextField = props => {
   const {
@@ -16,7 +17,7 @@ const TextField = props => {
   } = props
 
   return (
-    <Fragment>
+    <SectionInput>
       <Label>{required ? label + ' *' : label}</Label>
       <Input
         ref={dataRef}
@@ -26,7 +27,7 @@ const TextField = props => {
         onChange={onChange}
         {...others}
       />
-    </Fragment>
+    </SectionInput>
   )
 }
 
