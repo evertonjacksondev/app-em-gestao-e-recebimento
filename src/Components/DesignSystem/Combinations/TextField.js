@@ -1,5 +1,4 @@
 import React from 'react'
-import 'material-icons/iconfont/material-icons.css'
 import { Label } from '../Elements/Label'
 import { Input } from '../Elements/Input'
 import { SectionInput } from '../Elements/Section'
@@ -22,7 +21,7 @@ const TextField = props => {
       <Input
         ref={dataRef}
         name={name}
-        value={value}
+        value={value ?? ''}
         type={type}
         onChange={onChange}
         {...others}

@@ -10,13 +10,21 @@ export const SectionText = styled.div`
   display: flex;
   flex-direction: collum;
   margin: 10px;
-  
+  align-items: flex-end;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    flex-direction: column;
+  }
 `
 export const SectionButton = styled.div`
   display: flex;
   align-items: baseline;
   flex-direction: row;
   margin: 10px;
+  @media screen and (max-width: 768px) {
+    align-items: flex-end;
+    flex-direction: column;
+  }
 `
 
 export const SectionForm = styled.form`
@@ -24,4 +32,8 @@ export const SectionForm = styled.form`
   align-items: center;
   flex-direction: column;
   margin: 20px;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: collumn;
+  }
 `

@@ -79,7 +79,14 @@ export const Table = ({ id, columns, data }) => {
       { id: 2, name: 'Tom', age: 23, favFruit: '🍌' },
       { id: 3, name: 'Ann', age: 26, favFruit: '🍊' },
       { id: 4, name: 'Jack', age: 21, favFruit: '🍒' },
-      { id: 5, name: 'Everton', age: 21, city: 'Arujá', favFruit: '🍒', teste:'arroz' }
+      {
+        id: 5,
+        name: 'Everton',
+        age: 21,
+        city: 'Arujá',
+        favFruit: '🍒',
+        teste: 'arroz'
+      }
     ]
   }
 

@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-let baseUrl = 'https://quaint-tan-toga.cyclic.app'
+let baseUrl = 'http://localhost:2560'
 
 export const putPackingId = (body, success, error) => {
   try {
     const configAxios = {
       method: 'put',
-      timeout: 20000,
+      timeout: 40000,
       url: `${baseUrl}/packing`,
       data: body,
       headers: { Authorization: '' }
@@ -28,7 +28,7 @@ export const getPackingId = (success, error) => {
   try {
     const configAxios = {
       method: 'get',
-      timeout: 20000,
+      timeout: 40000,
       url: `${baseUrl}/packing`,
       headers: { Authorization: '' }
     }
@@ -49,7 +49,7 @@ export const postPacking = (body, success, error) => {
   try {
     const configAxios = {
       method: 'post',
-      timeout: 20000,
+      timeout: 40000,
       url: `${baseUrl}/packing`,
       data: body,
       headers: {
@@ -73,7 +73,7 @@ export const deletePackingId = (_id, body, success, error) => {
   try {
     const configAxios = {
       method: 'delete',
-      timeout: 20000,
+      timeout: 40000,
       url: `${baseUrl}/packing/${_id}`,
       data: body,
       headers: { Authorization: '' }

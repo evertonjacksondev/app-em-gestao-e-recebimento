@@ -20,7 +20,7 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   &.active {
-    color: #000000;
+    color: white;
     box-shadow: 5px 5px 5px #aba6a2;
   }
   :hover {

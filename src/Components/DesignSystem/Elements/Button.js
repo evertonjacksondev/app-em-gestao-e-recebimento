@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
 
- const Button = styled.button`
-  background: ${props => props.background ? props.background :'#587FA6'};
+const Button = styled.button`
+  background: ${props => (props.background ? props.background : '#587FA6')};
   color: black;
   border: 1px solid #587fa6;
   border-radius: 7px;
@@ -16,6 +16,11 @@ import 'material-icons/iconfont/material-icons.css'
   :hover {
     box-shadow: 0 0 5px #808080;
     color: white;
+  }
+  :disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
   }
 `
 
