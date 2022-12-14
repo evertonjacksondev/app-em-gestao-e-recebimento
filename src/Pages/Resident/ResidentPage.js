@@ -15,7 +15,7 @@ const ResidentPage = () => {
       <ButtonDefault
         name={'Novo Morador'}
         icon={'add'}
-        onClick={() => navPage('/resident/new')}
+        onClick={() => navPage('/morador/new')}
       />
       <Table columns={[]} data={[]} />
     </Fragment>

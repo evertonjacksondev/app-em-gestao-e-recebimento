@@ -1,8 +1,13 @@
 const axios = require('axios');
 
-let baseUrl = 'https://quaint-tan-toga.cyclic.app';
+let baseUrl = 'http://localhost:2560'
+const Authorization = `Bearer ${
+  JSON.parse(sessionStorage.getItem('auth'))
+    ? JSON.parse(sessionStorage.getItem('auth')).token
+    : ''
+}`
 
-export const putPackingId = (body, success, error) => {
+export const putResidentId = (body, success, error) => {
     try {
   
       const configAxios = {
@@ -10,7 +15,7 @@ export const putPackingId = (body, success, error) => {
         timeout: 20000,
         url: `${baseUrl}/resident`,
         data: body,
-        headers: {Authorization: ""},
+        headers: {Authorization},
       };
   
       axios(configAxios).then((response) => { success(response.data) }).catch((err) => { error(err.response ? err.response.data : err) });
@@ -19,14 +24,14 @@ export const putPackingId = (body, success, error) => {
     }
   }
 
-  export const getPackingId = (success, error) => {
+  export const getResidentId = (success, error) => {
     try {
   
       const configAxios = {
         method: 'get',
         timeout: 20000,
         url: `${baseUrl}/resident`,
-        headers: {Authorization: ""},
+        headers: {Authorization},
       };
   
       axios(configAxios).then((response) => { success(response.data) }).catch((err) => { error(err.response ? err.response.data : err) });
@@ -35,7 +40,7 @@ export const putPackingId = (body, success, error) => {
     }
   }
 
-  export const postPacking = (body, success, error) => {
+  export const postResident = (body, success, error) => {
     try {
   
       const configAxios = {
@@ -43,7 +48,7 @@ export const putPackingId = (body, success, error) => {
         timeout: 20000,
         url: `${baseUrl}/resident`,
         data: body,
-        headers: {Authorization: ""},
+        headers: {Authorization},
       };
   
       axios(configAxios).then((response) => { success(response.data) }).catch((err) => { error(err.response ? err.response.data : err) });
@@ -52,7 +57,7 @@ export const putPackingId = (body, success, error) => {
     }
   }
 
-  export const deletePackingId = (_id, body, success, error) => {
+  export const deleteResidentId = (_id, body, success, error) => {
     try {
   
       const configAxios = {
@@ -60,7 +65,7 @@ export const putPackingId = (body, success, error) => {
         timeout: 20000,
         url: `${baseUrl}/resident/${_id}`,
         data: body,
-        headers: {Authorization: ""},
+        headers: {Authorization},
       };
   
       axios(configAxios).then((response) => { success(response.data) }).catch((err) => { error(err.response ? err.response.data : err) });
