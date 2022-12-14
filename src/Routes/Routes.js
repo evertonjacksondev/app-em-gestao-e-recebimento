@@ -13,22 +13,15 @@ import ResidentPage from '../Pages/Resident/ResidentPage'
 const AppRoute = () => {
   return (
     <Fragment>
-      {[
-        '/home',
-        '/encomenda',
-        '/encomenda/new',
-        '/morador/new',
-        '/morador'
-      ].includes(useLocation().pathname.toLocaleLowerCase()) && <NavBar />}
       <Routes>
         <Route path='*' element={<Login />} />
-        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route element={<ProtectedRoutes />}>
           <Route path='/home' element={<Home />} />
           <Route path='/encomenda' element={<PackingPage />} />
           <Route path='/encomenda/:id' element={<PackingDetail />} />
           <Route path='/morador' element={<ResidentPage />} />
           <Route path='/morador/:id' element={<ResidentDetails />} />
-        {/* </Route> */}
+        </Route>
       </Routes>
     </Fragment>
   )

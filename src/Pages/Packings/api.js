@@ -1,6 +1,11 @@
 import axios from 'axios'
 
 let baseUrl = 'http://localhost:2560'
+const Authorization = `Bearer ${
+  JSON.parse(sessionStorage.getItem('auth'))
+    ? JSON.parse(sessionStorage.getItem('auth')).token
+    : ''
+}`
 
 export const putPackingId = (body, success, error) => {
   try {
@@ -9,7 +14,7 @@ export const putPackingId = (body, success, error) => {
       timeout: 40000,
       url: `${baseUrl}/packing`,
       data: body,
-      headers: { Authorization: '' }
+      headers: { Authorization }
     }
 
     axios(configAxios)
@@ -24,13 +29,34 @@ export const putPackingId = (body, success, error) => {
   }
 }
 
-export const getPackingId = (success, error) => {
+export const getPackingId = (_id, success, error) => {
+  try {
+    const configAxios = {
+      method: 'get',
+      timeout: 40000,
+      url: `${baseUrl}/packing/${_id}`,
+      headers: { Authorization }
+    }
+
+    axios(configAxios)
+      .then(response => {
+        success(response.data)
+      })
+      .catch(err => {
+        error(err.response ? err.response.data : err)
+      })
+  } catch (error) {
+    error(error.response ? error.response.data : error)
+  }
+}
+
+export const getPacking = (success, error) => {
   try {
     const configAxios = {
       method: 'get',
       timeout: 40000,
       url: `${baseUrl}/packing`,
-      headers: { Authorization: '' }
+      headers: { Authorization }
     }
 
     axios(configAxios)
@@ -53,8 +79,7 @@ export const postPacking = (body, success, error) => {
       url: `${baseUrl}/packing`,
       data: body,
       headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY5MWY0YjFlZDk1YzU0N2I3ODg3YyIsImVtYWlsIjoiZGV2LmV2ZXJ0b25qYWNrc29uQGdtYWlsLmNvbSIsImlhdCI6MTY3MDY4MzU1MywiZXhwIjoxNjcwNzY5OTUzfQ.BOXr4RMYeHDqq5fOKz_XlscrGZboSNkcf2ZqdDZRlkI'
+        Authorization
       }
     }
     axios(configAxios)
@@ -69,14 +94,13 @@ export const postPacking = (body, success, error) => {
   }
 }
 
-export const deletePackingId = (_id, body, success, error) => {
+export const deletePackingId = (_id, success, error) => {
   try {
     const configAxios = {
       method: 'delete',
       timeout: 40000,
       url: `${baseUrl}/packing/${_id}`,
-      data: body,
-      headers: { Authorization: '' }
+      headers: { Authorization }
     }
 
     axios(configAxios)

@@ -11,6 +11,7 @@ const Login = () => {
   const { enqueueSnackbar } = useSnackbar()
   const navigate = useNavigate()
   const [data, setData] = useState({})
+  sessionStorage.removeItem('auth')
   const handleChange = e => {
     e.preventDefault()
     const { name, value } = e.target
@@ -58,7 +59,13 @@ const Login = () => {
           value={data.password}
           required
         />
-        <ButtonDefault disabled={ Object.values(data).filter(value => value !== '').length !== 2} name='Entrar' icon={'rocket_launch'} />
+        <ButtonDefault
+          disabled={
+            Object.values(data).filter(value => value !== '').length !== 2
+          }
+          name='Entrar'
+          icon={'rocket_launch'}
+        />
       </SectionForm>
     </Fragment>
   )
