@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import 'material-icons/iconfont/material-icons.css'
 import { useNavigate } from 'react-router-dom'
 import ButtonDefault from './ButtonDefault'
-import { SectionButton } from '../Elements/Section'
+import { SectionButton, SectionForm } from '../Elements/Section'
+import imageProcess from '../../../images/processing.gif'
 
 export const Table = ({ id, columns, data }) => {
   const navigate = useNavigate()
   const Table = styled.table`
-    border: 1px solid black;
+  font-size:12px;
     width: 100%;
-    height: 200px;
     align-item: 'center';
     border-collapse: collapse;
     @media screen and (max-width: 768px) {
@@ -37,7 +37,7 @@ export const Table = ({ id, columns, data }) => {
     //   box-shadow: 10px 5px 5px #aba6a2;
     // }
     :nth-child(even) {
-      background-color: #f2f2f2;
+      background-color:#CBD8F0;
     }
   `
   const Pagination = styled.div`
@@ -96,6 +96,9 @@ export const Table = ({ id, columns, data }) => {
               ))}
           </tbody>
         </Table>
+        <SectionForm>
+          {!data.length && <img src={imageProcess}></img>}
+        </SectionForm>
       </Overflow>
     </Fragment>
   )

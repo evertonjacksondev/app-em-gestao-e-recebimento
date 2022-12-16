@@ -199,7 +199,7 @@ const PackingDetail = () => {
             name='Limpar'
             disabled={Object.values(data).length == 0}
             onClick={clearForm}
-            icon={'clear'}
+            icon={'clear_all'}
           />
           {id !== 'new' && (
             <ButtonDefault
