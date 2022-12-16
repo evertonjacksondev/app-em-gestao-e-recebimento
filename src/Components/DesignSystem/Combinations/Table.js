@@ -9,7 +9,7 @@ import imageProcess from '../../../images/processing.gif'
 export const Table = ({ id, columns, data }) => {
   const navigate = useNavigate()
   const Table = styled.table`
-  font-size:12px;
+    font-size: 12px;
     width: 100%;
     align-item: 'center';
     border-collapse: collapse;
@@ -18,6 +18,7 @@ export const Table = ({ id, columns, data }) => {
     }
   `
   const TableHeader = styled.th`
+    align-item: 'center';
     border: '1px solid black';
     background-color: #2b4d5c;
     color: white;
@@ -29,15 +30,17 @@ export const Table = ({ id, columns, data }) => {
     }
   `
   const TableData = styled.td`
+  align-item: 'center';
     border: 0px solid black;
     text-align: center;
   `
   const TableRow = styled.tr`
+  align-item: 'center';
     // :hover {
     //   box-shadow: 10px 5px 5px #aba6a2;
     // }
     :nth-child(even) {
-      background-color:#CBD8F0;
+      background-color: #cbd8f0;
     }
   `
   const Pagination = styled.div`

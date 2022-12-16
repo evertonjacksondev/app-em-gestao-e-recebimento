@@ -1,7 +1,10 @@
-import styled from "styled-components";
-import icons from 'material-icons/iconfont/material-icons.css'
+import 'material-icons/iconfont/material-icons.css'
+import { ImageHome } from './Home'
 
-const Icon = styled.i`
-
-
-`
+export const Icon = props => {
+  return (
+    <ImageHome>
+      <i class='material-icons'>{props.name ? props.name : ''}</i>
+    </ImageHome>
+  )
+}
