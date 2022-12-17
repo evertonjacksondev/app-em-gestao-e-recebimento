@@ -22,12 +22,10 @@ const NavBar = () => {
           <NavLink to='/encomenda' activeStyle>
             Encomenda
           </NavLink>
-          <NavLink to='/Sair' activeStyle>
-            Sair
-          </NavLink>
+          
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+          <NavBtnLink to='/login'>Login</NavBtnLink>
         </NavBtn>
       </Nav>
     </>
