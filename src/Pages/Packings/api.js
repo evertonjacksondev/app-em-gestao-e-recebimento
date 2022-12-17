@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-let baseUrl = 'http://localhost:2560'
+let baseUrl = 'https://quaint-tan-toga.cyclic.app'
 const Authorization = `Bearer ${
   JSON.parse(sessionStorage.getItem('auth'))
     ? JSON.parse(sessionStorage.getItem('auth')).token
