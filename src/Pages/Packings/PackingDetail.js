@@ -143,15 +143,7 @@ const PackingDetail = () => {
       <NavBar />
       <SectionForm>
         <SectionText>
-          <TextField
-            key='numero'
-            name='numero'
-            type='number'
-            min='0'
-            label='Número:'
-            value={data.numero}
-            onChange={handleChange}
-          />
+         
           <TextField
             key='name'
             name='name'
@@ -164,6 +156,15 @@ const PackingDetail = () => {
             name='torre'
             label='Torre:'
             value={data.torre}
+            onChange={handleChange}
+          />
+           <TextField
+            key='numero'
+            name='numero'
+            type='number'
+            min='0'
+            label='Número:'
+            value={data.numero}
             onChange={handleChange}
           />
 
