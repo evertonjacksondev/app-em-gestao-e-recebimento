@@ -22,7 +22,6 @@ const NavBar = () => {
           <NavLink to='/encomenda' activeStyle>
             Encomenda
           </NavLink>
-          
         </NavMenu>
         <NavBtn>
           <NavBtnLink to='/login'>Login</NavBtnLink>
