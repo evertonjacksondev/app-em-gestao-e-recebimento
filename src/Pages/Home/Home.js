@@ -60,17 +60,17 @@ const Home = () => {
       <Table
         data={[
           {
-            name: 'Bombeiro',
-            phoneNumber: '11997831826',
+            name: 'Policia Militar',
+            phoneNumber: '190',
             type: 'Serviço Público'
           },
           {
             name: 'Emergência',
-            phoneNumber: '11997831826',
+            phoneNumber: '193',
             type: 'Serviço Público'
           },
-          { name: 'Portaria', phoneNumber: '11997831826', type: 'Condominio' },
-          { name: 'Sindico', phoneNumber: '11997831826', type: 'Condominio' }
+          { name: 'Portaria', phoneNumber: '1146538005', type: 'Condominio' },
+          { name: 'Sindico', phoneNumber: '1146538006', type: 'Condominio' }
         ]}
         columns={columns}
       ></Table>
