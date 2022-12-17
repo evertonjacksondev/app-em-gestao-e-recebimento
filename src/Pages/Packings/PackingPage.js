@@ -18,6 +18,7 @@ const PackingPage = () => {
   const [filter, setFilter] = useState({})
   const navigate = useNavigate()
   const { enqueueSnackbar } = useSnackbar()
+
   const navPage = path => {
     navigate(path)
   }
@@ -97,7 +98,7 @@ const PackingPage = () => {
         />
       </SectionText>
 
-      <Table pathname={'encomenda'}  columns={columns} data={data} />
+      <Table pathname={'encomenda'} columns={columns} data={data} />
     </Fragment>
   )
 }

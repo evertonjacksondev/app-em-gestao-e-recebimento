@@ -32,6 +32,12 @@ const PackingDetail = () => {
     }
   }, [])
 
+  const sendMessage = data => {
+    window.open(
+      `https://api.whatsapp.com/send?phone=5511997831826&text=*Estou%20interessado!*%0aVeiculo%0a%0a%0aData%20da%20Retira:%0aData%20da%20Devolução:%0a*Preencha%20os%20Campos*%0aNome:%0aTelefone:%0aCEP:%0aEndereço%0aBairro:%0aNúmero:%0aCidade:%0aEstado:%0a`
+    )
+  }
+
   const handleChange = e => {
     e.preventDefault()
     const { name, value } = e.target
@@ -70,7 +76,6 @@ const PackingDetail = () => {
       'name',
       'torre',
       'numero',
-      'withDrawn',
       'status',
       'type',
       'cadastradoPor'
@@ -103,6 +108,7 @@ const PackingDetail = () => {
       postPacking(
         data,
         success => {
+          sendMessage(success)
           enqueueSnackbar('Criado com sucesso!', { variant: 'success' })
           navigate(`/encomenda/${success._id}`)
         },
@@ -152,13 +158,15 @@ const PackingDetail = () => {
             onChange={handleChange}
           />
 
-          <TextField
-            key='withDrawn'
-            name='withDrawn'
-            label='Retirado Por:'
-            value={data.withDrawn}
-            onChange={handleChange}
-          />
+          {data._id && (
+            <TextField
+              key='withDrawn'
+              name='withDrawn'
+              label='Retirado Por:'
+              value={data.withDrawn}
+              onChange={handleChange}
+            />
+          )}
         </SectionText>
         <SectionText>
           <Select
