@@ -31,7 +31,7 @@ const Home = () => {
           showArrows={true}
           style={{ height: '100% !important' }}
           showThumbs={false}
-          showStatus={false}
+          showStatus={true}
           interval={2000}
           autoPlay={true}
           infiniteLoop={true}

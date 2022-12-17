@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SectionInput = styled.div`
-  margin: 2px;
+  margin: 5px;
   display: 'flex';
   flex-direction: 'column';
 `
@@ -10,6 +10,17 @@ export const SectionText = styled.div`
   display: flex;
   flex-direction: collum;
   margin: 10px;
+  align-items: flex-end;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    flex-direction: column;
+  }
+`
+export const SectionFilter = styled.div`
+  display: flex;
+  flex-direction: collum;
+ 
+
   align-items: flex-end;
   @media screen and (max-width: 768px) {
     align-items: center;

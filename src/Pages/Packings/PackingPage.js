@@ -7,6 +7,7 @@ import Table from '../../Components/DesignSystem/Combinations/Table'
 import TextField from '../../Components/DesignSystem/Combinations/TextField'
 import {
   SectionButtonPacking,
+  SectionFilter,
   SectionText
 } from '../../Components/DesignSystem/Elements/Section'
 import NavBar from '../../Components/NavBar/NavBar'
@@ -65,6 +66,7 @@ const PackingPage = () => {
   return (
     <Fragment>
       <NavBar />
+
       <SectionText>
         <TextField
           name='filterId'
@@ -72,6 +74,7 @@ const PackingPage = () => {
           label={'Pesquisar...'}
           onChange={handleChange}
         />
+
         <ButtonDefault
           disabled={
             !Object.values(filter).filter(filters => filters != '').length > 0
