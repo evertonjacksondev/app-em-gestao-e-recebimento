@@ -97,7 +97,7 @@ const PackingPage = () => {
         />
       </SectionText>
 
-      <Table columns={columns} data={data} />
+      <Table pathname={'encomenda'}  columns={columns} data={data} />
     </Fragment>
   )
 }

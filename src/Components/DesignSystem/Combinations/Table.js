@@ -6,7 +6,7 @@ import ButtonDefault from './ButtonDefault'
 import { SectionButton, SectionForm } from '../Elements/Section'
 import imageProcess from '../../../images/processing.gif'
 
-export const Table = ({ id, columns, data }) => {
+export const Table = ({ pathname, id, columns, data }) => {
   const navigate = useNavigate()
   const Table = styled.table`
     font-size: 12px;
@@ -30,12 +30,12 @@ export const Table = ({ id, columns, data }) => {
     }
   `
   const TableData = styled.td`
-  align-item: 'center';
+    align-item: 'center';
     border: 0px solid black;
     text-align: center;
   `
   const TableRow = styled.tr`
-  align-item: 'center';
+    align-item: 'center';
     // :hover {
     //   box-shadow: 10px 5px 5px #aba6a2;
     // }
@@ -86,7 +86,7 @@ export const Table = ({ id, columns, data }) => {
                               key={'button'}
                               name='Detalhes'
                               onClick={() =>
-                                navigate(`/encomenda/${rowData._id}`)
+                                navigate(`/${pathname}/${rowData._id}`)
                               }
                             />
                           </SectionButton>
