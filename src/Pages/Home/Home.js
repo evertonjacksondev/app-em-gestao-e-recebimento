@@ -40,16 +40,14 @@ const Home = () => {
           autoPlay={true}
           infiniteLoop={true}
         >
-           <div>
-            <img src={Image4} />
-          </div>
-          <div>
-            <img src={Image4} />
-          </div>
+         
+         
           <div>
             <img src={Image0} />
           </div>
-         
+          <div>
+            <img src={Image4} />
+          </div>
           <div>
             <img src={Image1} />
           </div>
