@@ -11,8 +11,11 @@ import Image3 from './../../images/portaria.jpg'
 import Table from '../../Components/DesignSystem/Combinations/Table'
 import styled from 'styled-components'
 import { Icon } from '../../Components/DesignSystem/Elements/Icon'
+import { useLocation } from 'react-router-dom'
 
 const Home = () => {
+  let location = useLocation();
+
   const Typography = styled.h1`
     font-size: 26px;
     box-shadow: 0 5px #808080;
@@ -25,7 +28,7 @@ const Home = () => {
   ]
   return (
     <div>
-      <NavBar />
+      {location.pathname != '/' && <NavBar />}
       <div className='slider-container'>
         <Carousel
           showArrows={true}

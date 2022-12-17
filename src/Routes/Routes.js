@@ -14,6 +14,7 @@ const AppRoute = () => {
   return (
     <Fragment>
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='*' element={<Login />} />
         <Route element={<ProtectedRoutes />}>
           <Route path='/home' element={<Home />} />
