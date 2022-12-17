@@ -12,9 +12,11 @@ import { useSnackbar } from 'notistack'
 import { Select } from '../../Components/DesignSystem/Elements/Select'
 import { useNavigate, useParams } from 'react-router-dom'
 import NavBar from '../../Components/NavBar/NavBar'
+import { getResident } from '../Resident/api'
 
 const PackingDetail = () => {
   const [data, setData] = useState({ status: 'Nenhum' })
+  const [residents, setResidents] = useState({})
   const navigate = useNavigate()
   const { enqueueSnackbar } = useSnackbar()
   const [disabled, setDisabled] = useState(false)
@@ -30,11 +32,18 @@ const PackingDetail = () => {
         error => {}
       )
     }
+
+    getResident(
+      sucess => {
+        setResidents(sucess)
+      },
+      err => {}
+    )
   }, [])
 
   const sendMessage = data => {
     window.open(
-      `https://api.whatsapp.com/send?phone=5511997831826&text=*Estou%20interessado!*%0aVeiculo%0a%0a%0aData%20da%20Retira:%0aData%20da%20Devolução:%0a*Preencha%20os%20Campos*%0aNome:%0aTelefone:%0aCEP:%0aEndereço%0aBairro:%0aNúmero:%0aCidade:%0aEstado:%0a`
+      `https://api.whatsapp.com/send?phone=5511997831826&text=*Olá%20${data.name}!*%0aSua%20Encomenda%20Chegou!%0aEstá%20disponivel%20para%20realizar%20a%20retira%20na%20recepção`
     )
   }
 
@@ -135,6 +144,15 @@ const PackingDetail = () => {
       <SectionForm>
         <SectionText>
           <TextField
+            key='numero'
+            name='numero'
+            type='number'
+            min='0'
+            label='Número:'
+            value={data.numero}
+            onChange={handleChange}
+          />
+          <TextField
             key='name'
             name='name'
             label='Nome:'
@@ -146,15 +164,6 @@ const PackingDetail = () => {
             name='torre'
             label='Torre:'
             value={data.torre}
-            onChange={handleChange}
-          />
-          <TextField
-            key='numero'
-            name='numero'
-            type='number'
-            min='0'
-            label='Número:'
-            value={data.numero}
             onChange={handleChange}
           />
 
